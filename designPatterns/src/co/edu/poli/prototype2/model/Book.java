@@ -1,5 +1,9 @@
 package co.edu.poli.prototype2.model;
 
+/**
+ * @author wsoto
+ *
+ */
 public class Book extends Item {
 
 	private String ISBN;
@@ -78,9 +82,10 @@ public class Book extends Item {
 				+ ", title=" + title + ", numPages=" + numPages.length + "]";
 	}
 
+	/*
 	@Override
 	public int goTo (int location) {		
 		return numPages [location];
 	}
-
+	*/
 }

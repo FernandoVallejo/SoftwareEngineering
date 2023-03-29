@@ -27,6 +27,6 @@ public abstract class ObjectPool<T> {
 
 	@Override
 	public synchronized String toString() {
-		return String.format("Pool available=%d inUse=%d", available.size(), inUse.size());
+		return String.format("Pool available=%d unavailable=%d", inUse.size(), available.size());
 	}
 }
