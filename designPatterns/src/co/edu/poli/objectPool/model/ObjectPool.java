@@ -8,11 +8,11 @@ public abstract class ObjectPool<T> {
 	private final Set<T> available = new HashSet<>();
 	private final Set<T> inUse = new HashSet<>();
 
-	protected abstract T create();
+	protected abstract T create(String s);
 
-	public synchronized T checkOut() {
+	public synchronized T checkOut(String s) {
 		if (available.isEmpty()) {
-			available.add(create());
+			available.add(create(s));
 		}
 		var instance = available.iterator().next();
 		available.remove(instance);
@@ -27,6 +27,6 @@ public abstract class ObjectPool<T> {
 
 	@Override
 	public synchronized String toString() {
-		return String.format("Pool available=%d unavailable=%d", inUse.size(), available.size());
+		return String.format("Pool available=%d inUse=%d", available.size(), inUse.size());
 	}
 }

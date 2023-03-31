@@ -1,12 +1,12 @@
 package co.edu.poli.objectPool.model;
 
-public class Giant implements Creature {
-
+public class Dino implements Creature {
+	
 	private static int counter = 1;
 
 	private int id;
 
-	public Giant() {
+	public Dino() {
 		id = counter++;
 		try {
 			Thread.sleep(5000);
@@ -18,10 +18,10 @@ public class Giant implements Creature {
 	public int getId() {
 		return id;
 	}
-	
+
 	@Override
 	public String eat() {
-		return "Animals";
+		return "Plants";
 	}
 
 }
