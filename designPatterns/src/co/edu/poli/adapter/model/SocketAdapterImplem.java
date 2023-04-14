@@ -1,17 +1,24 @@
 package co.edu.poli.adapter.model;
 
-public class SocketAdapterImplem extends Socket implements SocketAdapter, X{
+public class SocketAdapterImplem extends Socket implements SocketAdapter{
 
 	@Override
-	public Volt get120() {
-		Volt v = new Volt();
-		v.setValue(transVolt(v, 1.8));
+	public Volt get110() {
+		Volt v = voltage();
+		v.setValue(transVolt(v, 2));
+		return v;
+	}
+
+	@Override
+	public Volt get127() {
+		Volt v = voltage();
+		v.setValue(transVolt(v, 1.73));
 		return v;
 	}
 
 	@Override
 	public Volt get220() {
-		Volt v = new Volt();
+		Volt v = voltage();
 		v.setValue(transVolt(v, 1));
 		return v;
 	}
@@ -20,9 +27,5 @@ public class SocketAdapterImplem extends Socket implements SocketAdapter, X{
 		return v.getValue()/d;
 	}
 
-	@Override
-	public int method1() {
-		return 5;
-	}
 
 }
