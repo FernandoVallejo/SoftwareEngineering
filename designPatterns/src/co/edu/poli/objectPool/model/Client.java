@@ -1,10 +1,5 @@
 package co.edu.poli.objectPool.model;
 
-/**
- * 
- * @author wsoto
- *
- */
 public class Client {
 	
 	public static void main(String[] args) {
